@@ -47,7 +47,7 @@ def get_player_data(id, sheet_name, range):
         return error
     
 def get_players():
-    players = get_player_data(SPREADSHEET_ID, 'ESPN Standard', 'B2:D225')['values']
+    players = get_player_data(SPREADSHEET_ID, 'ESPN Standard', 'B2:E225')['values']
 
     players_dict = []
     for player in players:
@@ -55,6 +55,7 @@ def get_players():
         entry['name'] = player[0]
         entry['team'] = player[1]
         entry['bye'] = player[2]
+        entry['position'] = player[3]
         players_dict.append(entry)
     return players_dict
     
@@ -103,7 +104,7 @@ if __name__ == "__main__":
         #create players table
         for player in players:
             cursor.execute(
-                f"INSERT INTO players(player_id, name, team, bye) VALUES (DEFAULT, $${player['name']}$$, $${player['team']}$$, $${player['bye']}$$)"
+                f"INSERT INTO players(player_id, name, team, bye, position) VALUES (DEFAULT, $${player['name']}$$, $${player['team']}$$, $${player['bye']}$$, $${player['position']}$$)"
             )
 
         for player_info in players:
