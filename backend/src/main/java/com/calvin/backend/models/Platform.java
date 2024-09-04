@@ -2,10 +2,8 @@ package com.calvin.backend.models;
 
 import jakarta.persistence.*;
 
-
-@Entity
-@Table(name = "sleeper")
-public class Sleeper extends Platform{
+@MappedSuperclass
+public abstract class Platform {
 
     @Id
     @Column(name = "player_id")
@@ -23,26 +21,9 @@ public class Sleeper extends Platform{
     @Column(name = "ppr_rank")
     private int pprRank;
 
-    // No-argument constructor
-    public Sleeper() {
-    }
-
-    // Parameterized constructor
-    public Sleeper(int playerId, String name, int standardRank, int halfPprRank, int pprRank) {
-        this.playerId = playerId;
-        this.name = name;
-        this.standardRank = standardRank;
-        this.halfPprRank = halfPprRank;
-        this.pprRank = pprRank;
-    }
-
     // Getter and Setter for playerId
     public int getPlayerId() {
         return playerId;
-    }
-
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
     }
 
     // Getter and Setter for name

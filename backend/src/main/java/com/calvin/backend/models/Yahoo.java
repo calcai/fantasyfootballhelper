@@ -4,11 +4,11 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name = "players")
-public class Yahoo {
+@Table(name = "yahoo")
+public class Yahoo extends Platform{
 
     @Id
-    @Column(name = "player_id")
+    @PrimaryKeyJoinColumn(name = "player_id")
     private int playerId;
 
     @Column(name = "name")
