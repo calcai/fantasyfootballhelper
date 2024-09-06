@@ -21,12 +21,19 @@ public abstract class Platform {
     @Column(name = "ppr_rank")
     private int pprRank;
 
-    // Getter and Setter for playerId
+    @OneToOne
+    @JoinColumn(name = "player_id")
+    private Player player;
+
+    // Getters and setters
     public int getPlayerId() {
         return playerId;
     }
 
-    // Getter and Setter for name
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
+    }
+
     public String getName() {
         return name;
     }
@@ -35,7 +42,6 @@ public abstract class Platform {
         this.name = name;
     }
 
-    // Getter and Setter for standardRank
     public int getStandardRank() {
         return standardRank;
     }
@@ -44,7 +50,6 @@ public abstract class Platform {
         this.standardRank = standardRank;
     }
 
-    // Getter and Setter for halfPprRank
     public int getHalfPprRank() {
         return halfPprRank;
     }
@@ -53,12 +58,19 @@ public abstract class Platform {
         this.halfPprRank = halfPprRank;
     }
 
-    // Getter and Setter for pprRank
     public int getPprRank() {
         return pprRank;
     }
 
     public void setPprRank(int pprRank) {
         this.pprRank = pprRank;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }

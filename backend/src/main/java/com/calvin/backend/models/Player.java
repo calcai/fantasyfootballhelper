@@ -20,6 +20,15 @@ public class Player{
     @Column(name = "bye")
     private int bye;
 
+    @OneToOne
+    private Espn espn;
+
+    @OneToOne
+    private Sleeper sleeper;
+
+    @OneToOne
+    private Yahoo yahoo;
+
     // Getter and Setter for playerId
     public int getPlayerId() {
         return playerId;
