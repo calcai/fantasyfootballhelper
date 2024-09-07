@@ -23,9 +23,9 @@ public class PlayerController {
     }
 
     @GetMapping("/name/{name}")
-    public ResponseEntity<PlayerDTO> getPlayerDTOByName(@PathVariable String name) {
+    public ResponseEntity<List<PlayerDTO>> getPlayerDTOByName(@PathVariable String name) {
         try {
-            PlayerDTO playerDTO = playerService.getPlayerDTOByName(name);
+            List<PlayerDTO> playerDTO = playerService.getPlayerDTOByName(name);
             return new ResponseEntity<>(playerDTO, HttpStatus.OK);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);

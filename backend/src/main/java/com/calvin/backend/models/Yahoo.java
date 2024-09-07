@@ -9,7 +9,7 @@ public class Yahoo extends Platform {
     public Yahoo() {
     }
 
-    public Yahoo(int playerId, String name, int standardRank, int halfPprRank, int pprRank) {
+    public Yahoo(Integer playerId, String name, Integer standardRank, Integer halfPprRank, Integer pprRank) {
         setPlayerId(playerId);
         setName(name);
         setStandardRank(standardRank);

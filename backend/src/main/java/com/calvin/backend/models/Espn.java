@@ -9,7 +9,7 @@ public class Espn extends Platform {
     public Espn() {
     }
 
-    public Espn(int playerId, String name, int standardRank, int halfPprRank, int pprRank) {
+    public Espn(Integer playerId, String name, Integer standardRank, Integer halfPprRank, Integer pprRank) {
         setPlayerId(playerId);
         setName(name);
         setStandardRank(standardRank);

@@ -11,8 +11,11 @@ public class Player{
     @Column(name = "player_id")
     private int playerId;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column(name = "team")
     private String team;
@@ -20,30 +23,41 @@ public class Player{
     @Column(name = "bye")
     private int bye;
 
+    @Column(name = "position")
+    private String position;
+
     @OneToOne
+    @JoinColumn(name = "player_id")
     private Espn espn;
 
     @OneToOne
+    @JoinColumn(name = "player_id")
     private Sleeper sleeper;
 
     @OneToOne
+    @JoinColumn(name = "player_id")
     private Yahoo yahoo;
 
-    // Getter and Setter for playerId
     public int getPlayerId() {
         return playerId;
     }
 
-    // Getter and Setter for name
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    // Getter and Setter for team
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public String getTeam() {
         return team;
     }
@@ -52,12 +66,19 @@ public class Player{
         this.team = team;
     }
 
-    // Getter and Setter for bye
     public int getBye() {
         return bye;
     }
 
     public void setBye(int bye) {
         this.bye = bye;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

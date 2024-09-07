@@ -9,7 +9,7 @@ public class Sleeper extends Platform {
     public Sleeper() {
     }
 
-    public Sleeper(int playerId, String name, int standardRank, int halfPprRank, int pprRank) {
+    public Sleeper(Integer playerId, String name, Integer standardRank, Integer halfPprRank, Integer pprRank) {
         setPlayerId(playerId);
         setName(name);
         setStandardRank(standardRank);
