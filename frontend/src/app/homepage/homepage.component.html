@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="header">
+    <h1>{{ appName }}</h1>
+  </div>
+
+  <div>
+    <label for="position">Filter by Position:</label>
+    <select id="position" (change)="onPositionChange($event)">
+      <option value="">All Positions</option>
+      <option *ngFor="let position of positions" [value]="position">{{ position }}</option>
+    </select>
+  </div>
+
+  <div class="table-container">
+    <table class="player-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Team</th>
+          <th>Bye Week</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of players">
+          <td>{{ player.firstName }} {{ player.lastName }}</td>
+          <td>{{ player.position }}</td>
+          <td>{{ player.team }}</td>
+          <td>{{ player.bye }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
