@@ -1,6 +1,8 @@
-.gitignore
 .env
-.venv
+.venv/
 credentials.json
 token.json
 load_data/
+.vscode/
+.idea/
+.DS_Store
